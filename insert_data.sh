@@ -51,7 +51,7 @@ do
       echo $OPPONENT_TEAM_ID
     fi
 
-    # insert into majors_courses
+    # insert into games
     INSERT_GAMES_RESULT=$($PSQL "INSERT INTO games(year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES($YEAR, '$ROUND', $WINNER_TEAM_ID, $OPPONENT_TEAM_ID, $WINNER_GOALS, $OPPONENT_GOALS)")
     if [[ $INSERT_GAMES_RESULT == "INSERT 0 1" ]]
     then
